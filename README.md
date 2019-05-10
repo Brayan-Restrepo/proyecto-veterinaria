@@ -1,4 +1,4 @@
-# proyecto-veterianaria
+# proyecto-veterinaria
 
 Para ejecutar el frontend 
 * npm install
