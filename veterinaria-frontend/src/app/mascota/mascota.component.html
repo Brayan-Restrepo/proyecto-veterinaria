@@ -1,0 +1,74 @@
+<a routerLink="/home"><button class="btn btn-success pull-right">Volver al menú</button></a>
+
+<p>
+  Registrar mascota
+</p>
+
+<div class="det-content">
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Especie:</label>
+      <select class="form-control" [(ngModel)]="formulario.especie">
+        <option value="" selected>Seleccionar</option>
+        <option value="Perro">Perro</option>
+        <option value="Gato">Gato</option>
+        <option value="Raton">Raton</option>
+        <option value="Loro">Loro</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Raza:</label>
+      <select class="form-control" [(ngModel)]="formulario.raza">
+          <option value="" selected>Seleccionar</option>
+          <option value="Doberman">Doberman</option>
+          <option value="Criollos">Criollos</option>
+        </select>
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text" class="form-control" [(ngModel)]="formulario.nombre">
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Peso:</label>
+      <input type="text" class="form-control" [(ngModel)]="formulario.peso">
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Edad:</label>
+      <input type="number" class="form-control" [(ngModel)]="formulario.edad">
+    </div>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-cont">
+      <button type="button" class="button primary save" (click)="enviar()">Registrar</button>
+    </div>
+  </div>
+  <hr>
+  <table>
+    <tbody>
+      <tr>
+        <th>Especie</th>
+        <th>Raza</th>
+        <th>Nombre</th>
+        <th>Peso</th>
+        <th>Edad</th>
+      </tr>
+      <ng-container *ngFor="let fila of mascotas">
+        <tr>
+          <td>{{fila.especie}}</td>
+          <td>{{fila.raza}}</td>
+          <td>{{fila.nombre}}</td>
+          <td>{{fila.peso}}</td>
+          <td>{{fila.edad}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>

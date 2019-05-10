@@ -1,0 +1,53 @@
+<a routerLink="/home"><button class="btn btn-success pull-right">Volver al menú</button></a>
+
+<p>
+    Registrar propietario
+  </p>
+  
+  <div class="det-content">
+    <div class="field col-sm-6 col-md-4">
+      <div class="form-group">
+        <label>Nombres:</label>
+        <input type="text" class="form-control" [(ngModel)]="formulario.nombres">
+      </div>
+    </div>
+  
+    <div class="field col-sm-6 col-md-4">
+      <div class="form-group">
+        <label>Apellidos:</label>
+        <input type="text" class="form-control" [(ngModel)]="formulario.apellidos">
+      </div>
+    </div>
+    <div class="field col-sm-6 col-md-4">
+      <div class="form-group">
+        <label>Documento de identificación:</label>
+        <input type="text" class="form-control" [(ngModel)]="formulario.documentoIdentificacion">
+      </div>
+    </div>
+    <div class="btn-cont">
+      <div class="btn-cont">
+        <button type="button" class="button primary save" (click)="enviar()">Registrar</button>
+      </div>
+    </div>
+    <div class="btn-cont">
+      <div class="btn-cont">
+        <p *ngIf="alert">Se registro correctamente!</p>
+      </div>
+    </div>
+    <hr>
+    <table>
+      <tbody>
+        <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Documento de identificación</th>
+        </tr>
+        <ng-container *ngFor="let fila of propietarios">
+          <tr>
+            <td>{{fila.nombres}}</td>
+            <td>{{fila.apellidos}}</td>
+            <td>{{fila.documentoIdentificacion}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>

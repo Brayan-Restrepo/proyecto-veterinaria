@@ -1,0 +1,48 @@
+<p>
+  Login
+</p>
+
+<div class="det-content">
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Usuario:</label>
+      <input type="email" class="form-control" [(ngModel)]="formulario.user">
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Contraseña:</label>
+      <input type="password" class="form-control" [(ngModel)]="formulario.pass">
+    </div>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-cont">
+      <button type="button" class="button primary save" (click)="validar()">Entrar</button>
+    </div>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-cont">
+      <button type="button" class="button primary save" (click)="mostrarFormulario()">Registrarse</button>
+    </div>
+  </div>
+</div>
+<hr>
+<div *ngIf="isFormulario" class="det-content">
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Ingrese un usuario:</label>
+      <input type="email" class="form-control" [(ngModel)]="registro.user">
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Ingrese una contraseña:</label>
+      <input type="text" class="form-control" [(ngModel)]="registro.pass">
+    </div>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-cont">
+      <button type="button" class="button primary save" (click)="registrarse()">Registrar</button>
+    </div>
+  </div>
+</div>

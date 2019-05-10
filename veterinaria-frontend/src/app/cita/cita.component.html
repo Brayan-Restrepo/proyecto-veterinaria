@@ -1,0 +1,73 @@
+<a routerLink="/home"><button class="btn btn-success pull-right">Volver al menú</button></a>
+
+<p>
+  Registrar cita
+</p>
+
+<div class="det-content">
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Mascota:</label>
+      <select class="form-control" [(ngModel)]="formulario.mascota">
+        <option value="" selected>Seleccionar</option>
+        <option *ngFor="let option of mascotas" value="{{option.nombre}}">{{option.nombre}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Propietario mascota:</label>
+      <select class="form-control" [(ngModel)]="formulario.propietario">
+        <option value="" selected>Seleccionar</option>
+        <option *ngFor="let option of propietarios" value="{{option.nombres}}">{{option.nombres}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Observaciones:</label>
+      <input type="text" class="form-control" [(ngModel)]="formulario.observaciones">
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Fecha de cita:</label>
+      <input type="date" class="form-control" [(ngModel)]="formulario.fechacita">
+    </div>
+  </div>
+  <div class="field col-sm-6 col-md-4">
+    <div class="form-group">
+      <label>Medico:</label>
+      <select class="form-control" [(ngModel)]="formulario.medico">
+          <option value="" selected>Seleccionar</option>
+          <option *ngFor="let option of medicos" value="{{option.nombres}}">{{option.nombres}}</option>
+        </select>
+    </div>
+  </div>
+  <div class="btn-cont">
+    <div class="btn-cont">
+      <button type="button" class="button primary save" (click)="enviar()">Registrar</button>
+    </div>
+  </div>
+  <hr>
+  <table>
+    <tbody>
+      <tr>
+        <th>Mascota</th>
+        <th>Propietario</th>
+        <th>Observaciones</th>
+        <th>Fecha cita</th>
+        <th>Medico</th>
+      </tr>
+      <ng-container *ngFor="let fila of citas">
+        <tr>
+          <td>{{fila.mascota}}</td>
+          <td>{{fila.propietario}}</td>
+          <td>{{fila.observaciones}}</td>
+          <td>{{fila.fechacita | date:'dd/MM/yyyy'}}</td>
+          <td>{{fila.medico}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
